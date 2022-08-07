@@ -18,11 +18,11 @@ function Main() {
    //console.log(map)
 
     async function fetchedData () {
-        const res = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_CjcxswCyAqyeW1PIaGzSwn88oFhgG&ipAddress=${formData}`);
+        const res = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_VmjWxSGUqueyljV8JUuaro3W4hynK&ipAddress=${formData}`);
         const data = await res.json();
-       // console.log(data)
+        //console.log(data)
         setIp(data.ip)
-        setLocation(data.location.region)
+        setLocation(data.location.city)
         setCountry(data.location.country)
         setIsp(data.isp)
         setTimeZone(data.location.timezone)
@@ -83,15 +83,14 @@ function Main() {
     {
    
    map === undefined? <div className="loader"></div> :
-   //<div class="loader"></div> ? map === undefined :
-    <MapContainer id='map' center={map} zoom={10} scrollWheelZoom={false} zoomControl={true}>
+    <MapContainer id='map' center={map} zoom={8} scrollWheelZoom={false} zoomControl={true}>
         <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         <Marker position={map} >
             <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
+            You're here.
             </Popup>
         </Marker>
     </MapContainer>

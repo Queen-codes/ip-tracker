@@ -74,17 +74,18 @@ img {
     left: 5%;
     border-radius: 12px;
     padding-bottom: 1.5rem;
+   z-index: 999;
 }
 
 .ip-details section {
     display: flex;
     flex-direction: column;
     margin-bottom: 1.3rem;
+   
 }
 
 #map {
     height: calc(100vh - 270px);
-    z-index: -1;
     width: 100%;
     cursor: pointer;
 }
@@ -135,7 +136,6 @@ img {
         display: flex;
         align-items: center;
         justify-content: space-evenly;
-        
     }
 
     .address {
